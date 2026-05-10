@@ -1,0 +1,18 @@
+name : My CI/CD Pipeline
+on:
+  push:
+    branches :
+      - main
+jobs :
+  build:
+    runs-on : ubuntu-latest
+    steps :
+
+      - name : Checkout repository
+        uses : actions/checkout@v4
+
+      - name : Validate Html file
+        run : test -f src/index.html
+
+      - name : Pipeline completed
+        run : echo "CI/CD Pipeline executed"
